@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLoaderData, useParams } from 'react-router';
-import { addToStoreDB } from '../../utility/AddToDB';
+import { addToStoreDB, addWishListDB } from '../../utility/AddToDB';
 
 
 const BookDeatails = () => {
@@ -10,6 +10,9 @@ const BookDeatails = () => {
     const singleBook = books.find(book => book.bookId == bookId);
     const markAsRead = (id) => {
         addToStoreDB(id);
+    }
+    const markAsWishlist = (id) => {
+        addWishListDB(id);
     }
     return (
         <div className='w-11/12 mx-auto m-10'>
@@ -73,8 +76,8 @@ const BookDeatails = () => {
                         {/* <Link to="/"> */}
                             <button onClick={() => {markAsRead(singleBook.bookId)}} className='btn p-6 text-xl rounded-md'>Mark as Read</button>
                         {/* </Link> */}
-                        {/* <Link to="/"> */}
-                            <button className='btn p-6 text-xl rounded-md text-white bg-[#59C6D2]'>Add to Whislist</button>
+                        {/* <Link to={`/bookDe atails/${singleBook.bookId}`}> */}
+                            <button onClick={() => {markAsWishlist(singleBook.bookId)}} className='btn p-6 text-xl rounded-md text-white bg-[#59C6D2]'>Add to Whislist</button>
                         {/* </Link> */}
                     </div>
                 </div>

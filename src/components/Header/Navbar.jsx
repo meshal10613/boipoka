@@ -5,7 +5,7 @@ const Navbar = () => {
     const links = <>
         <Link to="/"><li className='m-2'>Home</li></Link>
         <Link to="/readlist"><li className='m-2'>Listed Books</li></Link>
-        <Link><li className='m-2'>Page to Read</li></Link>
+        <Link to="/pagetoread"><li className='m-2'>Page to Read</li></Link>
     </>
     return (
         <div>
@@ -21,7 +21,9 @@ const Navbar = () => {
                         {links}
                     </ul>
                     </div>
-                    <a className="btn btn-ghost text-2xl md:text-5xl">Book Vibe</a>
+                    <Link to="/" className="cursor-pointer text-2xl md:text-5xl group hover:text-black">
+                        Boi <span className='group-hover:text-[#23BE0A]'>Poka</span>
+                    </Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
